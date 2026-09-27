@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>UR Election Night Live</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="presentation-body">
+  <main id="presentation">
+    <section class="topbar">
+      <div class="brand"><span class="brand-star">★</span><span>UR</span><b>ELECTION NIGHT LIVE</b></div>
+      <div class="live-badge">LIVE</div>
+    </section>
+
+    <section class="hero">
+      <div>
+        <div class="eyebrow" id="electionDate">FRIDAY 2 OCTOBER 2026</div>
+        <h1>USHER <span>VOTES</span></h1>
+        <p id="headline">Race to 326</p>
+      </div>
+      <div class="giant-star">★</div>
+    </section>
+
+    <section class="matchup-grid">
+      <article class="candidate-card candidate-a">
+        <div class="candidate-star">★</div>
+        <div>
+          <small id="partyA">LIBERAL DEMOCRATS</small>
+          <h2 id="leaderA">Maison Sanders</h2>
+          <div class="seat-big" id="seatA">0</div>
+          <span>SEATS</span>
+        </div>
+      </article>
+
+      <article class="center-card">
+        <div class="to-win">TO WIN</div>
+        <div class="win-number" id="majorityNumber">326</div>
+        <div class="majority-track">
+          <div class="track-a" id="trackA"></div>
+          <div class="track-b" id="trackB"></div>
+          <div class="majority-marker"></div>
+        </div>
+        <div class="landslide" id="landslideLabel">400 = LANDSLIDE</div>
+      </article>
+
+      <article class="candidate-card candidate-b">
+        <div>
+          <small id="partyB">LABOUR</small>
+          <h2 id="leaderB">Hala Ramen</h2>
+          <div class="seat-big" id="seatB">0</div>
+          <span>SEATS</span>
+        </div>
+        <div class="candidate-star">★</div>
+      </article>
+    </section>
+
+    <section class="dashboard">
+      <div class="panel map-panel">
+        <header>
+          <h3>HOUSE OF SENATE</h3>
+          <span id="declaredCount">0 / 650 DECLARED</span>
+        </header>
+        <div class="hex-map" id="hexMap"></div>
+      </div>
+
+      <div class="panel analysis-panel">
+        <header>
+          <h3 id="slideTitle">LATEST ANALYSIS</h3>
+          <span id="slideKicker">NATIONAL PICTURE</span>
+        </header>
+        <div id="slideStage"></div>
+      </div>
+    </section>
+
+    <section class="ticker">
+      <div class="ticker-label">UR</div>
+      <div class="ticker-text" id="tickerText">Election Night Live • House of Senate: 650 seats • 326 needed for a majority • 400+ is landslide territory</div>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

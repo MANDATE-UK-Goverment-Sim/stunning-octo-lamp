@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>UR Election Control Room</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="control-body">
+  <aside class="sidebar">
+    <div class="control-logo">★ <strong>UR</strong></div>
+    <nav>
+      <button class="nav-btn active" data-panel="dashboardPanel">Dashboard</button>
+      <button class="nav-btn" data-panel="constituenciesPanel">Constituencies</button>
+      <button class="nav-btn" data-panel="partiesPanel">Parties & Leaders</button>
+      <button class="nav-btn" data-panel="slidesPanel">Slides</button>
+      <button class="nav-btn" data-panel="settingsPanel">Settings</button>
+      <button class="nav-btn" data-panel="importPanel">Import / Export</button>
+    </nav>
+    <a class="presentation-link" href="index.html" target="_blank">Open Presentation ↗</a>
+  </aside>
+
+  <main class="control-main">
+    <header class="control-header">
+      <div>
+        <div class="eyebrow">USHER ELECTION STUDIO</div>
+        <h1>Control Room</h1>
+      </div>
+      <div class="live-controls">
+        <button id="undoBtn">Undo</button>
+        <button id="randomBtn" class="primary">Declare Random Seat</button>
+        <button id="resetBtn" class="danger">Reset</button>
+      </div>
+    </header>
+
+    <section id="dashboardPanel" class="control-panel active-panel">
+      <div class="stats-grid">
+        <div class="stat"><span>Declared</span><strong id="cDeclared">0 / 650</strong></div>
+        <div class="stat"><span>Majority</span><strong id="cMajority">326</strong></div>
+        <div class="stat"><span>Landslide</span><strong id="cLandslide">400</strong></div>
+        <div class="stat"><span>Leader</span><strong id="cLeader">Tied</strong></div>
+      </div>
+
+      <div class="control-grid">
+        <div class="card">
+          <h2>Live Headline</h2>
+          <input id="headlineInput" value="Race to 326">
+          <button id="saveHeadline">Send Headline Live</button>
+          <textarea id="tickerInput">Election Night Live • House of Senate: 650 seats • 326 needed for a majority • 400+ is landslide territory</textarea>
+          <button id="saveTicker">Update Ticker</button>
+        </div>
+
+        <div class="card">
+          <h2>Winner Control</h2>
+          <select id="winnerSelect"></select>
+          <button id="projectWinner" class="primary">Project Winner</button>
+          <button id="clearWinner">Clear Projection</button>
+          <p class="muted">Projection is operator-controlled; seat counting continues normally.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="constituenciesPanel" class="control-panel">
+      <div class="card">
+        <div class="split-header">
+          <h2>650 Constituencies</h2>
+          <input id="seatSearch" placeholder="Search constituencies">
+        </div>
+        <div id="seatTableWrap"></div>
+      </div>
+    </section>
+
+    <section id="partiesPanel" class="control-panel">
+      <div class="card">
+        <h2>Parties & Leaders</h2>
+        <div id="partyEditor"></div>
+        <button id="saveParties" class="primary">Save Parties</button>
+      </div>
+    </section>
+
+    <section id="slidesPanel" class="control-panel">
+      <div class="card">
+        <div class="split-header">
+          <h2>Analysis Slides</h2>
+          <button id="addSlide">+ New Slide</button>
+        </div>
+        <div id="slideEditor"></div>
+      </div>
+    </section>
+
+    <section id="settingsPanel" class="control-panel">
+      <div class="card form-grid">
+        <label>Election date<input id="electionDateInput"></label>
+        <label>Total seats<input type="number" id="totalSeatsInput"></label>
+        <label>Seats to win<input type="number" id="majorityInput"></label>
+        <label>Landslide threshold<input type="number" id="landslideInput"></label>
+        <label>Primary chamber<input id="chamberInput"></label>
+        <label>Secondary chamber<input id="secondChamberInput"></label>
+        <label>Office title<input id="officeInput"></label>
+        <button id="saveSettings" class="primary">Save Settings</button>
+      </div>
+    </section>
+
+    <section id="importPanel" class="control-panel">
+      <div class="card">
+        <h2>Import / Export</h2>
+        <p class="muted">Paste a full election JSON backup, or export this build for later.</p>
+        <textarea id="jsonBox" class="json-box"></textarea>
+        <div class="button-row">
+          <button id="exportBtn">Export JSON</button>
+          <button id="importBtn" class="primary">Import JSON</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="control.js"></script>
+</body>
+</html>
